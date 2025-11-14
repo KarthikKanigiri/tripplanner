@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2, LogOut, MapPin, Calendar } from "lucide-react";
+import { Loader2, LogOut, MapPin, Calendar, History } from "lucide-react";
 import { TripResults } from "@/components/TripResults";
 import { User, Session } from "@supabase/supabase-js";
 
@@ -137,6 +137,10 @@ const Planner = () => {
             <span className="text-sm text-muted-foreground">
               {user.email}
             </span>
+            <Button variant="outline" size="sm" onClick={() => navigate("/history")}>
+              <History className="h-4 w-4 mr-2" />
+              History
+            </Button>
             <Button variant="outline" size="sm" onClick={handleSignOut}>
               <LogOut className="h-4 w-4 mr-2" />
               Sign Out
